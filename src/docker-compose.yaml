@@ -5,9 +5,9 @@ networks:
     driver: bridge
     name: network-rotten
 
-#volumes:
-  #volume-rotten:
-  #  name: volume-rotten
+volumes:
+  volume-rotten:
+    name: volume-rotten
 
 
 services:
@@ -19,8 +19,8 @@ services:
       - network-rotten
     #ports:
     #  - 27017:27017
-    #volumes:
-    #  - volume-rotten:/data/db
+    volumes:
+      - volume-rotten:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongouser
       MONGO_INITDB_ROOT_PASSWORD: mongopwd
