@@ -27,7 +27,10 @@ services:
   
   app:
     container_name: app
-    image: ivanjuniordocker/rotten-potatoes:1
+    image: ivanjuniordocker/rotten-potatoes:${TAG}
+    build:
+      context: .
+      dockerfile: Dockerfile
     networks:
       - network-rotten
     ports:
